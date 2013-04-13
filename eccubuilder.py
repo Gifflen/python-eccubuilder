@@ -60,8 +60,8 @@ def make_eccu(containers, **kwargs):
     comp = re.compile(r'^$', flags=re.MULTILINE, )
     print re.sub(comp, '', '%s' % (eccu % body))
 
-
 def main():
+    '''Get cli args and make the file'''
     parser = argparse.ArgumentParser()
     parser.add_argument('username', type=str)
     parser.add_argument('apikey', type=str)
