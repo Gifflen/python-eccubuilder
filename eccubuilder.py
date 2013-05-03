@@ -15,6 +15,7 @@
 import pyrax
 import argparse
 import re
+import sys
 
 import pyrax.exceptions as exc
 import pyrax.utils as utils
@@ -59,6 +60,9 @@ def make_eccu(containers, **kwargs):
             body = body + '%s' % (req % uri)
     comp = re.compile(r'^$', flags=re.MULTILINE, )
     print re.sub(comp, '', '%s' % (eccu % body))
+
+def exit(stat):
+    sys.exit(stat)
 
 def main():
     '''Get cli args and make the file'''
