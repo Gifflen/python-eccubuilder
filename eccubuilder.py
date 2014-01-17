@@ -29,6 +29,7 @@ req = '''  <match:request-header operation="name-value-cmp" argument1="Host" arg
 
 def auth(**kwargs):
     '''Authenticate with user creds'''
+    pyrax.set_setting("identity_type", "rackspace")
     pyrax.set_credentials(kwargs['username'], kwargs['apikey'])
     return pyrax.cloudfiles
 
